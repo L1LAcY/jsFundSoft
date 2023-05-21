@@ -1,0 +1,104 @@
+//start 1st
+let a = 12;
+let b = 2;
+let c = 38;
+let t = "true"
+let f = "false"
+if (a < b & b < c) {
+  console.log(t);
+} else {
+  console.log(f);
+}
+//end 1st
+//start 2nd
+let x = 1;
+let y = 2;
+
+let res1 = String(x) + String(y);
+console.log(res1); // ""12""
+console.log(typeof res1); // ""string""
+
+let res2 = String(Boolean(x)) + String(y);
+console.log(res2); // ""true2""
+console.log(typeof res2); // ""string""
+
+let res3 = Boolean(x + y);
+console.log(res3); // true
+console.log(typeof res3); // ""boolean""
+
+let res4 = parseFloat("nm");
+console.log(res4); // NaN
+console.log(typeof res4); // ""number""
+//end 2nd
+//start 3rd
+let isAdult = prompt("18?")
+
+if (isAdult >= 18) {
+  alert("Ви досягли повнолітнього віку");
+} else {
+  alert("Ви ще надто молоді");
+}
+//end 3rd
+//start 4th
+let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5]
+let data =  7;// 5
+//end 4th
+//start 5th
+
+let q = prompt("q");
+let w = prompt("w");
+let e = prompt("e");
+let p = q/2 + w/2 + e/2;
+console.log(p);
+if (q > 0 && w > 0 && e > 0 && (p-w) > 0 && (p-e) > 0 && (p-q) > 0) {
+  let s = Math.sqrt(p*(p-q)*(p-w)*(p-e)).toFixed(2);
+  console.log(s);
+  if (s == (q*w)/2 || s == (w*e)/2 || s == (q*e)/2) {
+    console.log("прямокутний");
+  } else {
+    console.log("не прямокутний");
+  }
+} else {
+  console.log("nevirni dani");
+}
+
+//end 5th
+//start 6th[]
+function calc(a1, b1, op) {
+  if (op == 1) {
+    console.log(a1 * b1)
+  } else if (op == 2) {
+    console.log(a1 - b1)
+  } else if (op == 3) {
+    console.log(a1 / b1)
+  } else {
+    console.log(a1 + b1)
+  }
+}
+calc(6, 3, 234)
+//end 6th
+//start 7th
+findUnique([6, 4, 3, 5, 2])
+function findUnique(arr1) { 
+  let arr2 = [];
+  function sor(a,b){
+    return b-a;
+  }
+  arr1.sort(sor);
+  for (let i = 0; i <= arr1.length-1; i++) {
+    if (arr1[i] + 1 == arr1[i + 1]) {
+      arr2.push(i);
+      break;
+    } else if (arr1[i] + 1 != arr1[i + 1]){
+      continue;
+    }    
+  }
+  if (arr2.length > 0){
+    console.log(false);
+  } else {
+    console.log(true);
+  }
+  console.log(arr1);
+}
+
+//end7th
