@@ -1,0 +1,86 @@
+//start 1
+
+function compact(arr) {
+  const uniqueArray = [];
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (!uniqueArray.includes(arr[i])) {
+      uniqueArray.push(arr[i]);
+    }
+  }
+  
+  return uniqueArray;
+}
+arr2 = compact([3, 1, 5, 8, 5, 2, 1, 9])
+console.log(arr2)
+
+//end 1
+//start 2
+
+function createArray(start, end){
+  let arr = [];
+  for (let i = start; i<=end; i++){
+    arr.push(i);
+  }
+  console.log(arr);
+}
+createArray(prompt('start'), prompt('end'));
+
+//end 2
+//start 3
+function rangeRover(a, b){
+  let x = 1;
+  let arr = [];
+  for (let i = a; i<=b; i++){
+    arr.push(x);
+    
+    for (let j = 1; j<=arr.length; j++){
+      console.log(i);
+    }
+    x++;
+  }
+}
+
+rangeRover(prompt('a'), prompt('b'));
+//end 3
+//start 4
+
+function randArray(k){
+  let a1 = Math.ceil(1);
+  let b2 = Math.floor(500);
+  let arr = [];
+  for (let i = 1; i<=k; i++){
+    arr.push(Math.floor(Math.random() * (a1 - b2 + 1) + b2))
+  }
+  console.log(arr);
+}
+randArray(prompt('k'));
+//end 4
+//start 5
+//[5, “Limit”, 12, “a”, “3”, 99, 2, [2, 4, 3, “33”, “a”, “text”], “strong”, “broun”]
+function splitArr(arr){
+  let arrNum = [];
+  let arrStr = [];
+  for (let i = 0; i<=arr.length; i++){
+    if (typeof arr[i]  == "number"){
+      arrNum.push(arr[i]);
+      console.log(arrNum);
+    } else if (typeof arr[i]  == "string"){
+      arrStr.push(arr[i]);
+    } else if (typeof arr[i] == 'object'){
+        for (let j = 0; j<=arr[i]; j++){
+          if (typeof arr[i][j] == "number"){
+            arrNum.push(arr[j]);
+          }
+          if (typeof arr[i][j] == "string"){
+            arrStr.push(arr[j]);
+          }
+        }
+    }
+  }
+  //for (let i = 0;   )
+  let arrAll = [arrNum , arrStr];
+  return arrAll;
+}
+console.log(splitArr([5, 'Limit', 12, 'a', '3', 99, 2, [2, 4, 3, '33', 'a', 'text'], 'strong', 'broun']));
+//end 5
