@@ -1,0 +1,111 @@
+//start 1
+class MonthExeption extends Error{
+  constructor(message){
+    super(message);
+    this.name = "MonthExepction";
+    this.message = message;
+  }
+}
+class NumberError extends Error{
+  constructor(message){
+    super(message);
+    this.name = "Wrong Number";
+    this.message = message;
+  }
+}
+class DataError extends Error{
+  constructor(message){
+    super(message);
+    this.name = "Wrong Data";
+    this.message = message;
+  }
+}
+class RangeError extends Error{
+  constructor(message){
+    super(message);
+    this.name = "Too small";
+    this.message = message;
+  }
+}
+class EvalError extends Error{
+  constructor(message){
+    super(message);
+    this.name = "Wrong User";
+    this.message = message;
+  }
+}
+
+function sumSliceArray(arr, first, second){
+  if (typeof first == "number" && typeof second == "number"){
+    if (second >= arr.length || first >= arr.length){
+      throw new NumberError("Wrong numbers");
+    } else {
+      let sum = arr[first-1] + arr[second-1];
+      console.log(sum)
+    }
+  }else {
+    throw new NumberError("Wrong data");
+  }
+}
+sumSliceArray([1, 2, 3, 4, 5, 5, 6], 2, 3);
+//end 1
+//start2
+function checkAge(name, age, status){
+  if (age < 18 || age > 70){
+    throw new RangeError('too small');
+  } else if(typeof name == 'undefined' || typeof name == 'null'){
+    throw new Error('the age field is empty');
+  } else if (status !== 'admin' && 'Admin' && 'moderator' && 'Moderator' && 'user' && 'User'){
+    throw new EvalError('wrong user');
+  } else {
+    prompt(`${name} you are permitted to watch the movie`)
+  }
+}
+//checkAge(prompt('name'), prompt('age'), prompt('status'));
+//end2
+//start3
+function calcRectangle(width, height){
+  if (typeof width != 'number' || typeof height != 'number'){
+    if (typeof width == 'string' || typeof height == "string"){
+      console.log(Number(width) * Number(height));
+    }else {
+      throw new DataError('write numbers');
+    }
+  } else {
+    console.log(width * height);
+  }
+}
+calcRectangle(10, '200');
+//end3
+//start4
+function showMonthName(n){
+  if (n == 1){
+    console.log('Jan');
+  } else if(n==2){
+    console.log('Feb');
+  } else if(n==3){
+    console.log('March');
+  } else if(n==4){
+    console.log('April');
+  } else if(n==5){
+    console.log('May');
+  } else if(n==6){
+    console.log('June');
+  } else if(n==7){
+    console.log('July');
+  } else if(n==8){
+    console.log('August');
+  } else if(n==9){
+    console.log('Sep');
+  } else if(n==10){
+    console.log('Oct');
+  } else if(n==11){
+    console.log('Nov');
+  } else if(n==12){
+    console.log('Dec');
+  } else {
+    throw new MonthExeption('MonthException Incorrect month number');
+  }
+}
+showMonthName(12);
+//end4
