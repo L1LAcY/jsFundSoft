@@ -1,0 +1,121 @@
+class Krug{
+  constructor(x, y, r, center){
+    this.x = x;
+    this.y = y;
+    this.r = r;
+    this.center = [`${this.x} , ${this.y}`];
+  }
+  dovzhynaNS(){
+    return 2*3.14*this.r;
+  }
+  makeCopy(){
+    return new Circle(this.center, this.r);
+  }
+}
+
+Krug.prototype.copy = function() { // попробував так зробити, не впевнений чи правильно
+  const copiedKrug = new Krug();
+  for (let prop in this) {
+    if (this.hasOwnProperty(prop)) {
+      copiedKrug[prop] = this[prop];
+    }
+  }
+  return copiedKrug;
+};
+
+const obj = new Krug(10, 15, 25);
+const copiedKrg = obj.copy();
+copiedKrg.x = 17;
+copiedKrg.y = 30;
+copiedKrg.r = 45;
+
+console.log(obj); 
+console.log(copiedKrg);
+
+Krug.prototype.toString = function() {
+  return Symbol(`${this}`);
+};
+
+function propsCount(currentObj){
+  let props = Object.keys(currentObj);
+  let prpscnt = props.length;
+  console.log(prpscnt);
+}
+let mentor = {
+  course: "the way",
+  duration: "the long way",
+  direction: "that way"
+};
+propsCount(mentor);
+
+class Person{
+  constructor(name, surname){
+    this.name = name;
+    this.surname = surname;
+  }
+  showFullName(){
+    return this.surname + " " + this.name;
+  }
+}
+class Student extends Person {
+  constructor(name, surname, year){
+    super(name, surname);
+    this.year = year;
+  }
+  showFullName2(middleName){
+    return `${this.name}  ${this.surname}  ${middleName}`;
+  }
+  showCourse(){
+    if (typeof year == 'string'){
+      return 2023 - parseInt(this.year);
+    } else if (typeof year == 'number'){
+      return 2023 - this.year;
+    }
+  }
+}
+class marker{
+  constructor(color, ink){
+    this.color = color;
+    this.ink = ink;
+  }
+  giveColor() {
+    return this.color;
+  }
+
+  giveInk() {
+    return this.ink;
+  }
+  // letterByLetter(text, delay){
+  //   let i = 0;
+  //   function displaySymbol() {
+  //     if (i < text.length) {
+  //       console.log(text[i]);
+  //       i++;
+  //       setTimeout(displaySymbol, delay);
+  //     }
+  //   }
+
+  // displaySymbol();
+  // }
+  inkLtCounter(text){
+    let usedInk = 0.5;
+    let i = 0;
+    let coloredText = '%c';
+    while (usedInk <= this.ink && i < text.length) {
+      if (text[i] !== ' ') {
+        coloredText += `${text[i]}`;
+        i = i + 1;
+        usedInk = usedInk + 0.5;
+      } else {
+        coloredText += ' ';
+        i = i + 1;
+        continue;
+      }
+    }
+
+    console.log(coloredText, `color: ${this.color}`);
+  }
+}
+    
+const Marko = new marker('rgb(100, 134, 53)', 37);
+Marko.inkLtCounter('hello world erdsfgsr sdkjghskh sjhgaihg aourhgakjsfgbau aworughasnkhabr awjrhgbaksbvkar owrhksjbhab');
