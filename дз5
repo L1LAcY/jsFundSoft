@@ -1,0 +1,127 @@
+// // <!DOCTYPE html>
+// // <html lang="en">
+// //   <head>
+// //     <meta charset="UTF-8">
+// //     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+// //     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+// //     <title>JS Practice</title>
+// //   </head>
+// //   <body>
+// //     <h1 id="bigHead">I am a big header!!!</h1>
+// //     <div id="myDiv">
+// //       <p>First paragraph</p>
+// //       <p>Second paragraph</p>
+// //       <p>Third paragraph</p>
+// //       <p>Fourth paragraph</p>
+// //     </div>
+// //     <ul id="myList">
+// //       <li>Make</li>
+// //       <li>me</li>
+// //       <li>horizontal!</li>
+// //     </ul>
+// //       <p>If it is deleted, it is invisible </p>
+// //     <ul>
+// //       <li id="aLi">
+// //         first something
+// //       </li>
+// //       <li id="bLi">
+// //         second something
+// //       </li>
+// //       <li id="cLi">
+// //         third smth
+// //       </li>
+// //       <li id="dLi">
+// //         4th smth
+// //       </li>
+// //       <li id="eLi">
+// //         5th smth
+// //       </li>
+// //     </ul>
+// // 2 i 1
+// //     <script>
+// //       let a = document.querySelector("#aLi");
+// //       let b = document.querySelector("#bLi");
+// //       let c = document.querySelector("#cLi");
+// //       let d = document.querySelector("#dLi");
+// //       let e = document.querySelector("#eLi");
+// //       console.log(a.textContent);
+// //       console.log(e.textContent);
+// //       console.log(b.textContent);
+// //       console.log(d.textContent);
+// //       console.log(c.textContent);
+// //       let BigHead = document.getElementById("bigHead").textContent;
+// //       bigHead.style.backgroundColor = "green";
+// //       let horizontalList = document.getElementById("myList");
+// //       horizontalList.style.display = 'flex';
+// //       horizontalList.style.flex = 'column';
+// //       horizontalList.style.listStyle = 'none';
+// //       console.log(
+// //         BigHead
+// //       )
+      
+// //     </script>
+// //   </body>
+// // </html>
+// // 3
+
+
+// //4
+// let fullName = document.querySelector('[data-form="ПІБ"]');
+// let phoneNumber = document.querySelector('[data-form="Номер телефону"]');
+// let dateOfBirth = document.querySelector('[data-form="Дата народження"]');
+// let email = document.querySelector('[data-form="Електронна пошта"]');
+// let inputBtn = document.querySelector('.btn');
+// let outDiv = document.querySelector('.out');
+// inputBtn.addEventListener('click', (a) => {
+//   a.preventDefault();
+//   let fullNameV = fullName.value;
+//   let phoneNumberV = phoneNumber.value;
+//   let dateOfBirthV = dateOfBirth.value;
+//   let emailV = email.value;
+//   outDiv.textContent = `
+//   ПІБ: ${fullNameV};
+//   Телефон:${phoneNumberV};
+//   Дата народження:${dateOfBirthV};
+//   email:${emailV};
+//   `
+//   fullName.value = '';
+//   phoneNumber.value = '';
+//   dateOfBirth.value = '';
+//   email.value = '';
+// })
+
+// //4
+// //5
+// let circle = document.querySelectorAll('.circle');
+// let newCircle= Array.from(circle).map((item) => {
+//     circleValue = item.getAttribute('data-anim');
+//     item.classList.add(circleValue);
+//     return circleValue;
+// });
+// circle.forEach((item) => {
+//     const animation = item.classList.contains(circleValue);
+//     console.log(`Anim: ${animation}`);
+// });
+// //5
+// //6
+// let price = 189.99;
+// let clrBtn = document.querySelectorAll('.color');
+// let priceElement = document.querySelector('.price h1');
+
+// clrBtn.forEach((button) => {
+//   button.addEventListener('click', function() {
+//     const selectedColor = this.getAttribute('color');
+//     if (selectedColor === 'blue') {
+//       price = 189.99;
+//     } else if (selectedColor === 'red'){
+//       price = 200.99;
+//     } else if (selectedColor === 'green'){
+//       price = 199.99;
+//     } else if (selectedColor === 'orange'){
+//       price = 179.99;
+//     } else if (selectedColor === 'black'){
+//       price = 0.99;
+//     } document.getElementById('outprice').textContent = price;
+//   })
+// })
+// //6
