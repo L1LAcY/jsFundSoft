@@ -1,0 +1,118 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <p id ='text'>I learning JavaScript events!</p>  
+    <div> 
+        <button>Change style!</button> 
+        
+    </div> 
+    <title>Drop-down Menu Example</title>
+    <style>
+      /* Style the drop-down menu */
+      .dropdown-menu {
+        width: 200px;
+      }
+
+      /* Style the drop-down button */
+      .dropdown-button {
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+    <body id="bodyStyle"> 
+      <div class="dropdown-menu">
+        <button id = 'drop-downId' class="dropdown-button">Select an option</button>
+        <select id="selectMenu">
+          <option id="opt1" value="">Option 1</option>
+          <option id="opt2" value="">Option 2</option>
+          <option id="opt3" value="">Option 3</option>
+          <option id="opt4" value="">Option 4</option>
+          <option id="opt5" value="">Option 5</option>
+          <!-- Add more options as needed -->
+        </select>
+      
+      </div>
+      <button id="blueButton">click for blue</button>
+      <button id="pinkButton">dobble click for pink</button>
+      <button id="brownButton">Press and hold for brown</button>
+      <a href="" id="yellowLink">Hover to make yellow</a>
+      <button id="live-button">Live Button!</button>
+      <div id="5id"></div>
+      <script> 
+        let bodyStl = document.getElementById('bodyStyle');
+        let liveBtn = document.getElementById('live-button');
+        liveBtn.addEventListener('mouseover',function(){
+          document.getElementById('5id').innerHTML += `Mouse on me!<br>`;
+        });
+        liveBtn.addEventListener('click',function(){
+          document.getElementById('5id').innerHTML += `I've been clicked!<br>`;
+        });
+        liveBtn.addEventListener('mouseout',function(){
+          document.getElementById('5id').innerHTML += `Mouse is not on me!<br>`;
+        });
+      //start4
+        // let dropBtn = document.getElementById('drop-downId');
+        // let selectMenu = document.getElementById('selectMenu');
+        // dropBtn.addEventListener('click', function () {
+        //   let selectedOption = selectMenu.options[selectMenu.selectedIndex];
+        //   selectMenu.removeChild(selectedOption);
+        // });
+        //end4
+            //start3
+        // let blueBtn = document.getElementById('blueButton');
+        
+        // let pinkBtn = document.getElementById('pinkButton');
+        // let brownBtn = document.getElementById('brownButton');
+        // let yellowLnk = document.getElementById('yellowLink');
+        // blueBtn.addEventListener('click', function(){
+        //   bodyStl.style.backgroundColor = 'blue';
+        // });
+        // brownBtn.addEventListener('mousedown',function(){
+        //   bodyStl.style.backgroundColor = 'brown';
+        // });
+        // brownBtn.addEventListener('mouseup',function(){
+        //   bodyStl.style.backgroundColor = 'white';
+        // });
+        // pinkBtn.addEventListener('dblclick', function(){
+        //   bodyStl.style.backgroundColor = "pink";
+        // });
+        // yellowLnk.addEventListener('mouseover', function(){
+        //   bodyStl.style.backgroundColor = 'yellow';
+        // });
+        // yellowLnk.addEventListener('mouseout', function(){
+        //   bodyStl.style.backgroundColor = 'white';
+        // });
+            //end3
+            //start1 
+            // let openTab = window.open('', 'name', 'height = 200, width = 200'); 
+            // setTimeout(function() { 
+             
+            //     openTab.resizeTo(500, 500); 
+            // }, 2000); 
+            // setTimeout(function() { 
+             
+            //     openTab.moveTo(200, 200); 
+            // }, 4000); 
+            // setTimeout(function() { 
+             
+            //     openTab.close(); 
+            // }, 6000); 
+            //end1 
+            //start 2
+            // let pText = document.getElementById('text'); 
+            // let btn = document.querySelector('button'); 
+            // btn.className = 'btnChange'; 
+            // let buttonChange = document.getElementsByClassName('btnChange'); 
+            // function changeCSS(){ 
+            //     pText.style.color = 'orange'; 
+            //     pText.style.fontFamily = 'Comic Sans MS'; 
+            //     pText.style.fontSize = '20px'; 
+            //     pText.textContent = 'I am learning JS events'; 
+            // } 
+            // btn.addEventListener('click', changeCSS); 
+            //end2
+        </script> 
+    </body> 
+</html>
