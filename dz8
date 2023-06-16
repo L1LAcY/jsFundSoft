@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+
+    </header>
+    <body>
+        
+    </body>
+        <script>
+            const upperCase = (str) => {
+                const goodStr = 'String starts with an uppercase character';
+                const badStr = `String doesn't start with uppercase character`;
+                let regexp = /^[A-Z]/;
+                let result = regexp.test(str);   
+                if (result === true) {
+                    console.log(goodStr);
+                } else {
+                    console.log(badStr);
+                } //1
+            }
+            upperCase('Good morning USA');
+            const valEmail = (email) => {
+                let regex = /^[a-zA-Z0-9]{1}-{1}[a-zA-Z0-9_-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/
+                console.log(regex.test(email))
+            }//for 2 and 5
+            valEmail('vanla---pko@gmail.com');
+            const switchLet = (text) => {
+                let reggex = /(\S+)\s+(\S+)/;
+                console.log(text.replace(reggex, "$2 $1"));
+                console.log(text);
+            }//3
+            switchLet('ggod morning');
+            const valCard = (card) => {
+                let regCard = /^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/;
+                console.log(regCard.test(card));
+            }//4
+            valCard('2445-3457-2355-5774');
+            valLogin = (login) => {
+                let regLog = /^[a-zA-Z][a-zA-Z0-9.]{1,9}$/;
+                let quantity = login.match(/[0-9]*\.?[0-9]+/g) || [];
+                let validation = regLog.test(login);
+                console.log({validation, quantity})
+            }//6
+            valLogin('L11LA2.3c4Y');
+        </script>
+</html>
