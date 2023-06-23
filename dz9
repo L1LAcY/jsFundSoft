@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<!---->
+    </head>
+    <body>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <h3>header1</h3>
+        <div>text1</div>
+        <h3>header2</h3>
+        <div>text2</div>
+        <a href="https://www.google.com/">google</a>
+        <button class="btn">click</button>
+        <h2 class="head">header1</h2>
+        <h2 class="head">header2 <span class="inner">inner elem1</span></h2>
+        <h2>header3</h2>
+        <h2 class="head">header4<span>inner elem2</span></h2>
+        <h2>header5</h2>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        </script>
+        <script src="mainJS.js">
+
+        </script>
+    </body>
+</html>
+
+<!--the end of html file and the start of js file-->
+$(function(){
+    $('.btn').on('click', function(){
+        $('h3+div').each(function (i, el) {
+            $(el).insertBefore($(el).prev('h3'));
+        });
+        $('.head').css('background', 'green').find('.inner').css('fontSize', '35px');
+        console.log('jqury');
+    })
+})
+$("a[href^='https://']").attr('target', '_blank');
+const $check = $(':checkbox');
+$check.on('click', function(){
+    if ($(':checkbox:checked').length == 3) {
+        $check.attr('disabled', 'true');
+    }
+})
+
